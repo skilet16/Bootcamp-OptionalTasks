@@ -21,6 +21,7 @@
         password: "{{ mysql_root_password }}"
         login_user: root
         login_password: "{{ mysql_root_password }}"
+        login_unix_socket: /var/run/mysqld/mysqld.sock
 
     # Create mysql database for wordpress
     - name: Create MySQL database
