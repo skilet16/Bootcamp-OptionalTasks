@@ -1,0 +1,5 @@
+# Ignore everything in the custom_vpc directory
+custom_vpc/*
+
+# But include main.tf
+!custom_vpc/main.tf
