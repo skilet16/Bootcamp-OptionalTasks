@@ -2,8 +2,11 @@
 # Required packages for wordpress
 required_packages: ['apache2', 'php', 'libapache2-mod-php', 'php-mysql', 'mysql-server', 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'python3-pymysql']
 
-#MySQL Settings for wordpress
+# MySQL Settings for wordpress
 mysql_root_password: "12345"
 mysql_db: "wordpress"
 mysql_user: "admin"
 mysql_password: "admin12345"
+
+# Apache default path
+apache_path: "/var/www/html/" 
