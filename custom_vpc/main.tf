@@ -24,6 +24,71 @@ resource "aws_vpc" "daniils_custom_vpc" {
   }
 }
 
+# Creating security group within VPC
+resource "aws_security_group" "daniils-final-sg" {
+  name        = "daniils-custom_vpc-sg"
+  description = "Security group for the custom VPC (Daniils)"
+  vpc_id = aws_vpc.daniils_custom_vpc.id
+
+  # Inbound rule [SSH] 
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]  
+  }
+
+  # Inbound rule [HTTP] 
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]  
+  }
+
+  # Inbound rule for [HTTPS]
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  #############################
+  # Outbound rule [SSH]
+  egress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Outbound rule [HTTP]
+  egress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Outbound rule [HTTPS]
+  egress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Outbound rule [All TCP] 
+  egress {
+     from_port = 0
+     to_port = 65535
+     protocol = "tcp"
+     cidr_blocks = ["0.0.0.0/0"]
+   }
+
+}
+
 # Creating public subnet 1
 resource "aws_subnet" "daniils_subnet_public_1" {
   vpc_id     = aws_vpc.daniils_custom_vpc.id
