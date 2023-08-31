@@ -25,3 +25,4 @@ The second automation script is responsible for creating custom VPC in AWS. It c
 ## Authors
 * Daniil Jenotov [@dann-dann](https://www.github.com/dann-dann)
 * Eriks Masinskis [@skilet16](https://www.github.com/skilet16)
+* Batyrlan Bakytbekov (@BatyrlanBakytbekov)[https://www.github.com/BatyrlanBakytbekov]
