@@ -6,6 +6,11 @@
     - vars/default.yml
   
   tasks:
+    # Update all packages
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+  
     # Install required packaged for installing wordpress
     - name: Install packages for wordpress
       apt:
