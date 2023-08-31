@@ -9,4 +9,4 @@ mysql_user: "admin"
 mysql_password: "admin12345"
 
 # Apache default path
-apache_path: "/var/www/html/" 
+apache_path: "/var/www/html" 
